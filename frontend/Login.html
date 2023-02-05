@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/icon.png">
+    <title>Login</title>
+</head>
+<body>
+    <section class="flex justify-center items-center w-full min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat"
+    style="background: url('./assets/bg-cover.png');">
+        <div class="w-80 border shadow-md h-[560px] px-2 my-2 rounded-sm">
+            <form class="flex flex-col gap-4 mt-10" id="login-form">
+                <div class="w-full  bg-red-300 h-10 mt-2 hidden rounded-sm px-2 text-sm items-center" id="error-text">Error Message</div>
+                <div class="flex flex-col relative justify-center items-center">
+                    <img src="./assets/icon.png" class="h-20 w-20 relative mx-auto mt-4" />
+                    <label class="absolute mx-auto top-16 text-xs left-36 text-sky-500 p-1 font-semibold tracking-tighter">CodeBook</label>
+                </div>
+            <div class="flex flex-col ">
+                <label class="text-sm text-slate-500">username</label>
+                <input type="text" name="username" placeholder="username or email" class="outline-none text-sm border p-2 rounded-md"/>
+            </div>
+            <div class="flex flex-col ">
+                <label class="text-sm text-slate-500">password</label>
+                <input type="password" name="password" placeholder="password" class="outline-none text-sm border p-2 rounded-md" />
+            </div>
+            <button class="bg-[#7AD9F8] font-semibold tracking-tight mx-auto p-1 w-44 rounded-md hover:ring-2">Login</button>
+           <a href="#" class="relative mx-auto text-sm hover:text-sky-500 text-slate-500">forgotten password ?</a>
+           <a href="#" class="mt-20 relative mx-auto text-sm hover:text-sky-500 transition-all duration-100 text-slate-500">create new account</a>
+            </form>
+        </div>
+    </section>
+    <script defer type="text/javascript">
+        const errorEl = document.getElementById('error-text');
+        const formLogin = document.getElementById('login-form');
+
+        formLogin.addEventListener('submit',(e)=>{
+     e.preventDefault();
+     let formData = new FormData(formLogin);
+     errorEl.classList.remove('hidden');
+          errorEl.classList.add('flex');
+          errorEl.textContent = 'form submitted';
+        })
+    </script>
+</body>
+</html>
