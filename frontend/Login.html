@@ -84,7 +84,14 @@
           if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
               let data = xhr.response;
-              showToast(data);
+
+              let result = JSON.parse(data);
+              if (result.message === "success") {
+                localStorage.setItem("user", result.username);
+                location.href = "index.html";
+              } else {
+                showToast(result.message);
+              }
             }
           }
         };
