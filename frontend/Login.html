@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/icon.png">
+    <script defer src="./js/toast.js"></script>
     <title>Login</title>
 </head>
 <body>
     <section class="flex justify-center items-center w-full min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat"
-    style="background: url('./assets/bg-cover.png');">
+    style="background: url('./assets/bg-cover.png');" id="section-el">
         <div class="w-80 border shadow-md h-[560px] px-2 my-2 rounded-sm">
             <form class="flex flex-col gap-4 mt-10" id="login-form">
-                <div class="w-full  bg-red-300 h-10 mt-2 hidden rounded-sm px-2 text-sm items-center" id="error-text">Error Message</div>
                 <div class="flex flex-col relative justify-center items-center">
                     <img src="./assets/icon.png" class="h-20 w-20 relative mx-auto mt-4" />
                     <label class="absolute mx-auto top-16 text-xs left-36 text-sky-500 p-1 font-semibold tracking-tighter">CodeBook</label>
@@ -28,21 +28,26 @@
             </div>
             <button class="bg-[#7AD9F8] font-semibold tracking-tight mx-auto p-1 w-44 rounded-md hover:ring-2">Login</button>
            <a href="#" class="relative mx-auto text-sm hover:text-sky-500 text-slate-500">forgotten password ?</a>
-           <a href="#" class="mt-20 relative mx-auto text-sm hover:text-sky-500 transition-all duration-100 text-slate-500">create new account</a>
+           <a href="Signup.html" class="mt-20 relative mx-auto text-sm hover:text-sky-500 transition-all duration-100 text-slate-500">create new account</a>
             </form>
         </div>
     </section>
+    <div class="toast absolute top-2 left-1/2 -translate-x-1/2 shadow-2xl hidden items-center h-10 rounded-md
+     z-50 p-1 bg-white w-72 transition-all duration-75  ease-out border border-l-4 border-l-red-400 ring-inset" id="toast">
+        <h4>somehti</h4>
+    </div>
     <script defer type="text/javascript">
-        const errorEl = document.getElementById('error-text');
         const formLogin = document.getElementById('login-form');
-
+    const toast = document.getElementById('toast');
         formLogin.addEventListener('submit',(e)=>{
      e.preventDefault();
-     let formData = new FormData(formLogin);
-     errorEl.classList.remove('hidden');
-          errorEl.classList.add('flex');
-          errorEl.textContent = 'form submitted';
+       toast.classList.replace("hidden", "flex")
+       setTimeout(()=>{
+        toast.classList.replace('flex','hidden')
+       },3000)
         })
+        
+      
     </script>
 </body>
 </html>
