@@ -6,34 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>Dashboard</title>
-    <style type="text/css">
+    <!-- <style type="text/css">
       .active {
         color: skyblue;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <nav class="w-full h-12 border shadow-md flex items-center">
-      <section class="w-full flex flex-row justify-between px-2 items-center">
-        <div>
-          <img src="./assets/icon.png" class="h-8 w-8 rounded-full" />
-        </div>
-        <div class="flex gap-4">
-          <a href="#" class="active active:text-sky-500">Home</a>
-          <a href="#">Friends</a>
-          <a href="#">Messanger</a>
-          <a href="#">Settings</a>
-        </div>
-        <div class="h-9 w-9 rounded-full">
-          <img
-            class="h-full w-full rounded-full p-0.5 border border-slate-200 cursor-pointer"
-            id="avatar"
-            onclick="logout();"
-          />
-        </div>
-      </section>
-    </nav>
+    <nav
+      class="w-full h-12 border shadow-md flex items-center"
+      id="header"
+    ></nav>
 
+    <div class="h-10 w-20 bg-sky-500 px-2">ded</div>
+    <script src="./js/app.js"></script>
     <script defer>
       let user = localStorage.getItem("user");
       const avatarEl = document.getElementById("avatar");

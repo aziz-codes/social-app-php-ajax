@@ -33,7 +33,7 @@ $c_password = mysqli_real_escape_string($con,$_POST['confirm_password']);
 
        if(in_array($img_ext,$extensions)==true){
              
-        $time = time();//return current <time class=""></time>
+        $time = time();//return current 
 
         
         $new_image_name = $time.$img_name;
@@ -45,7 +45,8 @@ $c_password = mysqli_real_escape_string($con,$_POST['confirm_password']);
 
 //  lets insert the data into our database.
 
-$query = mysqli_query($con,"INSERT INTO user (token, name, username,email,password,avatar,status ) VALUES('$random_id','$name','$username','$email','$password','$new_image_name','$status')");
+$query = mysqli_query($con,"INSERT INTO user (token, name, username,email,password,avatar,status )
+ VALUES('$random_id','$name','$username','$email','$password','$new_image_name','$status')");
 
  if($query){
     echo "Account created";
@@ -53,14 +54,13 @@ $query = mysqli_query($con,"INSERT INTO user (token, name, username,email,passwo
  else{
     echo "Something went wrong";
  }
-       }
+ }
 
-       }else{
+       }
+       else{
         echo "Invallid image type...";
        }
-
-
-            }
+    }
             else{
                 echo "Please select an image file";
             }
